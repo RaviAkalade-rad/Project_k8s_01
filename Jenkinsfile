@@ -25,6 +25,11 @@ pipeline {
                 sh 'docker push ravidocker0507/flaskapp:$BUILD_NUMBER'
             }
         }
+        stage('deploy app on k8s'){
+            steps{
+                sh 'cubectl apply -f app_deployment.yml'
+            }
+        }    
 }
 post {
         always {
