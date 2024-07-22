@@ -18,4 +18,4 @@ spec:
         - name: eks-devops
           image: flaskapp:$BUILD_NUMBER
           ports:
-            - containerPort: 8090
+            - containerPort: 5000
