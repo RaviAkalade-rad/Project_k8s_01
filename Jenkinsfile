@@ -25,6 +25,11 @@ pipeline {
                 sh 'docker push ravidocker0507/flaskapp:$BUILD_NUMBER'
             }
         }
+        stage('deploy app') {
+            steps{
+                sh 'kubectl apply -f .\app_deployment.yml'
+            }
+        }
            
 }
 post {

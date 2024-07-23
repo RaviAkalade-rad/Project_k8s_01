@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: eks-devops-deployment
+  name: flaskapp-deployment
   labels:
-    app: eks-devops
+    app: flaskapp
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: eks-devops
+      app: flaskapp
   template:
     metadata:
       labels:
-        app: eks-devops
+        app: flaskapp
     spec:
       containers:
         - name: eks-devops
           image: flaskapp:$BUILD_NUMBER
           ports:
-            - containerPort: 5000
+            - containerPort: 4000

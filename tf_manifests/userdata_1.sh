@@ -10,7 +10,7 @@ yum -y upgrade
 yum install -y jenkins
 systemctl start jenkins
 systemctl enable jenkins
+usermod -a -G docker jenkins
 yum install -y git
 curl -O https://bootstrap.pypa.io/pip/3.7/get-pip.py
 python3 get-pip.py --user
-usermod -a -G docker jenkins
