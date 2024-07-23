@@ -6,3 +6,4 @@ RUN pip install -r requirements.txt
 EXPOSE 4000
 ENTRYPOINT ["python"]
 CMD ["src/app.py"]
+#comments
